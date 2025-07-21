@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
         stage('Build') {
             steps {
@@ -7,18 +10,23 @@ pipeline {
                 sh 'dotnet build --no-restore'
             }
         }
-        stage('Test') { 
+        stage('Test') {
             steps {
-                sh 'dotnet test --no-build --no-restore --collect "XPlat Code Coverage" --results-directory TestResults' 
+                sh 'dotnet test --no-build --no-restore --collect "XPlat Code Coverage"'
             }
             post {
                 always {
-                    publishCobertura(
-                        coberturaReportFile: '**/TestResults/**/coverage.cobertura.xml',
-                        sourceEncoding: 'ASCII',
-                        failUnhealthy: false,
-                        failUnstable: false
-                    )
+                    recordCoverage(tools: [[parser: 'COBERTURA', pattern: '**/*.xml']], sourceDirectories: [[path: 'SimpleWebApi.Test/TestResults']])
+                }
+            }
+        }
+        stage('Deliver') { 
+            steps {
+                sh 'dotnet publish SimpleWebApi --no-restore -o published'  
+            }
+            post {
+                success {
+                    archiveArtifacts 'published/*.*' 
                 }
             }
         }
