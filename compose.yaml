@@ -1,0 +1,6 @@
+﻿services:
+  currencyratesgateway:
+    image: currencyratesgateway
+    build:
+      context: .
+      dockerfile: CurrencyRatesGateway/Dockerfile

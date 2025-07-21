@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesGateway.API", "CurrencyRatesGateway.API\CurrencyRatesGateway.API.csproj", "{3EDBF3EB-674B-4750-9400-E3F666C6BE77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D6E2AD5-17CA-4AF4-8034-761BD02F9E28}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+		Dockerfile = Dockerfile
+		.dockerignore = .dockerignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesGateway.Application", "CurrencyRatesGateway.Application\CurrencyRatesGateway.Application.csproj", "{EEA0EA01-2B6D-40CF-ABCA-5090FE9CF964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesGateway.Domain", "CurrencyRatesGateway.Domain\CurrencyRatesGateway.Domain.csproj", "{567FA51B-7234-4E24-8EFC-8A77ADBC4DC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesGateway.CbRFAdapter", "CurrencyRatesGateway.CbRFAdapter\CurrencyRatesGateway.CbRFAdapter.csproj", "{6D887916-4DAB-4900-AEF8-D8E09C9D646D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyRatesGateway.Application.Tests", "CurrencyRatesGateway.Application.Tests\CurrencyRatesGateway.Application.Tests.csproj", "{004AE63A-82E5-4912-9D54-A5EC874BF992}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EDBF3EB-674B-4750-9400-E3F666C6BE77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDBF3EB-674B-4750-9400-E3F666C6BE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDBF3EB-674B-4750-9400-E3F666C6BE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDBF3EB-674B-4750-9400-E3F666C6BE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA0EA01-2B6D-40CF-ABCA-5090FE9CF964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA0EA01-2B6D-40CF-ABCA-5090FE9CF964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA0EA01-2B6D-40CF-ABCA-5090FE9CF964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA0EA01-2B6D-40CF-ABCA-5090FE9CF964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567FA51B-7234-4E24-8EFC-8A77ADBC4DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567FA51B-7234-4E24-8EFC-8A77ADBC4DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567FA51B-7234-4E24-8EFC-8A77ADBC4DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567FA51B-7234-4E24-8EFC-8A77ADBC4DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D887916-4DAB-4900-AEF8-D8E09C9D646D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D887916-4DAB-4900-AEF8-D8E09C9D646D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D887916-4DAB-4900-AEF8-D8E09C9D646D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D887916-4DAB-4900-AEF8-D8E09C9D646D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{004AE63A-82E5-4912-9D54-A5EC874BF992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{004AE63A-82E5-4912-9D54-A5EC874BF992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{004AE63A-82E5-4912-9D54-A5EC874BF992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{004AE63A-82E5-4912-9D54-A5EC874BF992}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
