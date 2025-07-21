@@ -3,4 +3,4 @@
     image: currencyratesgateway
     build:
       context: .
-      dockerfile: CurrencyRatesGateway/Dockerfile
+      dockerfile: Dockerfile
