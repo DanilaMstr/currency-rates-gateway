@@ -9,11 +9,16 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'dotnet test --no-build --no-restore --collect "XPlat Code Coverage"' 
+                sh 'dotnet test --no-build --no-restore --collect "XPlat Code Coverage" --results-directory TestResults' 
             }
             post {
                 always {
-                    recordCoverage(tools: [[parser: 'COBERTURA', pattern: '**/*.xml']], sourceDirectories: [[path: 'SimpleWebApi.Test/TestResults']])  
+                    publishCobertura(
+                        coberturaReportFile: '**/TestResults/**/coverage.cobertura.xml',
+                        sourceEncoding: 'ASCII',
+                        failUnhealthy: false,
+                        failUnstable: false
+                    )
                 }
             }
         }
