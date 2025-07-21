@@ -14,15 +14,10 @@ pipeline {
             steps {
                 sh 'dotnet test --no-build --no-restore --collect "XPlat Code Coverage"'
             }
-            post {
-                always {
-                    recordCoverage(tools: [[parser: 'COBERTURA', pattern: '**/*.xml']], sourceDirectories: [[path: 'CurrencyRatesGateway.Application.Tests/TestResults']])
-                }
-            }
         }
         stage('Deliver') { 
             steps {
-                sh 'dotnet publish SimpleWebApi --no-restore -o published'  
+                sh 'dotnet publish CurrencyRatesGateway --no-restore -o published'  
             }
             post {
                 success {
