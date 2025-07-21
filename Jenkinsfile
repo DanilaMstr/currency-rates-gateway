@@ -16,7 +16,7 @@ pipeline {
             }
             post {
                 always {
-                    recordCoverage(tools: [[parser: 'COBERTURA', pattern: '**/*.xml']], sourceDirectories: [[path: 'SimpleWebApi.Test/TestResults']])
+                    recordCoverage(tools: [[parser: 'COBERTURA', pattern: '**/*.xml']], sourceDirectories: [[path: 'CurrencyRatesGateway.Application.Tests/TestResults']])
                 }
             }
         }
