@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh 'dotnet publish ./CurrencyRatesGateway.API.csproj --no-restore -o published'  
+                sh 'dotnet publish /Users/danilaponukaev/.jenkins/workspace/currency-rates-gateway/CurrencyRatesGateway.API.csproj --no-restore -o published'  
             }
             post {
                 success {
