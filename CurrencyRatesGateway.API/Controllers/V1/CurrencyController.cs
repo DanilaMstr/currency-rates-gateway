@@ -26,6 +26,11 @@ public class CurrencyController : ControllerBase
         [FromQuery, SwaggerSchema(Title = "ISO Букв. код валюты")] string? currencyCode = null,
         [FromQuery, SwaggerSchema(Title = "Дата курса")] DateTime? date = null)
     {
+        if (date is not null && date > DateTime.UtcNow)
+        {
+            return BadRequest("Date can't be greater than current date");
+        }
+        
         var result = await _currencyService.GetCurrencyRatesAsync(currencyCode, date);
 
         if (result.Count == 0)
